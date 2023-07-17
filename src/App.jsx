@@ -1,15 +1,19 @@
 
 import './App.css'
 import { Outlet } from 'react-router-dom'
-import Navbar from './pages/shared/navbar/Navbar'
+import Navbar from './components/navbar/Navbar'
+import Footer from './components/footer/Footer'
 
 function App() {
 
   return (
-    <>
-      <Navbar></Navbar>
-      <Outlet></Outlet>
-    </>
+    <div className='flex flex-col justify-between min-h-screen'>
+      <div className='min-h-screen'>
+        <Navbar></Navbar>
+        <Outlet></Outlet>
+      </div>
+      <Footer></Footer>
+    </div>
   )
 }
 
