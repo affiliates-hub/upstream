@@ -1,0 +1,36 @@
+/* You can us custom class hare */
+::-webkit-scrollbar {
+    width: 18px;
+}
+
+/* You can us custom class hare */
+::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background: rgb(238, 242, 255);
+
+}
+
+/* You can us custom class hare */
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 7px;
+    border: 4px solid rgb(238, 242, 255);
+}
+
+/* You can us custom class hare */
+::-webkit-scrollbar-thumb:hover {
+    border: 3px solid rgb(238, 242, 255);
+
+
+}
+
+/* You can us custom class hare */
+::-webkit-scrollbar-corner {}
+
+/* SUPPORT FOR FIREFOX */
+@supports (scrollbar-color: red blue) {
+    * {
+        scrollbar-color: rgb(254, 210, 12) rgba(14, 186, 97, 0.485);
+        scrollbar-width: thin;
+    }
+}
