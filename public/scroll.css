@@ -1,6 +1,7 @@
 /* You can us custom class hare */
 ::-webkit-scrollbar {
     width: 18px;
+    height: 0px;
 }
 
 /* You can us custom class hare */

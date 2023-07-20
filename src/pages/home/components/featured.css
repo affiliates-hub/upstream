@@ -1,0 +1,5 @@
+/* custom-styles.css */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #333030; /* Change this to your desired color */
+}
