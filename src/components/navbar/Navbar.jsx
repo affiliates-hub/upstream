@@ -50,7 +50,11 @@ const Navbar = () => {
         <div className="overflow-x-hidden">
             {/* options and other nav options */}
             <div title="navbar options" className="flex justify-between items-center w-full h-12 border shadow fixed p-1 md:p-2 lg:p-4 xl:p-6 2xl:p-8 bg-white z-[111]">
-                <div title="logo" className="h-10 w-[90px] lg:w-[100px] 2xl:w-[120px] bg-gray-300 rounded"></div>
+
+                <Link to={'/'}>
+                    <div title="logo" className="h-10 w-[90px] lg:w-[100px] 2xl:w-[120px] bg-gray-300 rounded"></div>
+
+                </Link>
                 <div title="search bar for big screen" className="hidden md:block">
                     <form className="flex gap-2">
                         <input type="search" placeholder="Search model" name="serch" className=" md:w-[355px] lg:w-[475px] xl:w-[600px] h-10 border-2 rounded p-2" />

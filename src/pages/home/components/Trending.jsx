@@ -2,10 +2,13 @@ import React from 'react';
 import { register } from 'swiper/element/bundle';
 import { useEffect } from 'react';
 import TrendyCard from '../../../components/TrendyCard/TrendyCard';
+import { useRef } from 'react';
+
 register();
 const Trending = ({ data }) => {
+    const trendingRef = useRef(null)
     useEffect(() => {
-        const swiperEl = document.querySelector('swiper-container');
+        const swiperEl = trendingRef.current;
         // swiper parameters
         const swiperParams = {
 
@@ -78,8 +81,8 @@ const Trending = ({ data }) => {
 
 
     return (
-        <div className='py-3 bg-slate-50'>
-            <swiper-container init="false">
+        <div className='py-3 bg-slate-50 px-2' >
+            <swiper-container init="false" ref={trendingRef}>
 
                 {
                     data.map(ele => <swiper-slide><TrendyCard></TrendyCard></swiper-slide>)
