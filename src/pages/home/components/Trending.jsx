@@ -1,13 +1,11 @@
 import React from 'react';
 import { register } from 'swiper/element/bundle';
-import CardHome from './CardHome';
-import './featured.css'
 import { useEffect } from 'react';
+import TrendyCard from '../../../components/TrendyCard/TrendyCard';
 register();
-const Featured = ({ data }) => {
+const Trending = ({ data }) => {
     useEffect(() => {
         const swiperEl = document.querySelector('swiper-container');
-
         // swiper parameters
         const swiperParams = {
 
@@ -72,14 +70,10 @@ const Featured = ({ data }) => {
                 },
             },
         };
-
         // now we need to assign all parameters to Swiper element
         Object.assign(swiperEl, swiperParams);
-
         // and now initialize it
         swiperEl.initialize();
-
-
     }, [])
 
 
@@ -88,14 +82,11 @@ const Featured = ({ data }) => {
             <swiper-container init="false">
 
                 {
-                    data.map(ele => <swiper-slide><CardHome></CardHome></swiper-slide>)
+                    data.map(ele => <swiper-slide><TrendyCard></TrendyCard></swiper-slide>)
                 }
             </swiper-container>
-
         </div>
-
-
     );
 };
 
-export default Featured;
+export default Trending;

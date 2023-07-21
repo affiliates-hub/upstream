@@ -4,8 +4,7 @@ import { BsFillCartFill, BsFillArrowRightCircleFill } from 'react-icons/bs';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
-import './featured.css'
-const CardHome = ({ data }) => {
+const TrendyCard = ({ data }) => {
     return (
         <div className="flex flex-col gap-2 w-full bg-base-100 p-2 shadow-xl rounded flex-shrink-0 py-3">
             <div title='company name' className='flex justify-between items-center px-1 capitalize'>
@@ -37,4 +36,4 @@ const CardHome = ({ data }) => {
     );
 };
 
-export default CardHome;
+export default TrendyCard;
