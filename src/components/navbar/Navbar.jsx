@@ -57,6 +57,11 @@ const Navbar = () => {
                 </Link>
                 <div title="search bar for big screen" className="hidden md:block">
                     <form className="flex gap-2">
+                        <select name="type" id="" className="border-2 rounded capitalize w-16 text-gray-500 text-sm font-semibold">
+                            <option value="mobile">mobile</option>
+                            <option value="mobile">laptop</option>
+                            <option value="mobile">Smart Phone</option>
+                        </select>
                         <input type="search" placeholder="Search model" name="serch" className=" md:w-[355px] lg:w-[475px] xl:w-[600px] h-10 border-2 rounded p-2" />
                         <button type="submit" className="h-10 border-2 rounded px-3 active:scale-90 duration-150"><FaMagnifyingGlass /></button>
                     </form>
@@ -88,12 +93,21 @@ const Navbar = () => {
                 </div>
             </div >
             {/* serch for small screen */}
-            <div title="serch bar for small screen" className={`z-10 duration-150 fixed ${miniserch ? 'top-12' : '-top-7'} w-full bg-white border shadow flex flex-col items-center justify-center md:hidden`}>
-                <form className="h-12 flex gap-2 w-full px-2 items-center">
-                    <input type="search" placeholder="Search model" name="serch" className="w-full h-10 border-2 rounded p-2" />
-                    <button type="submit" className="h-10 border-2 rounded px-3 active:scale-90 duration-150"><FaMagnifyingGlass /></button>
+            <div title="serch bar for small screen" className={`z-10 h-32 duration-150 fixed ${miniserch ? 'top-12' : '-top-[5rem]'} w-full bg-white border shadow flex flex-col items-center md:hidden overflow-x-hidden`}>
+                <form className=" p-1 flex flex-col gap-2 w-full px-2 items-start
+                ">
+                    <div className="flex gap-2 w-full  items-center">
+                        <input type="search" placeholder="Search model" name="serch" className="w-full h-10 border-2 rounded p-2" />
+                        <button type="submit" className="h-10 border-2 rounded px-3 active:scale-90 duration-150"><FaMagnifyingGlass /></button>
+
+                    </div>
+                    <select name="type" id=""  className="border-2  rounded capitalize w-full p-1">
+                            <option value="mobile">select Catagorty</option>
+                            <option value="mobile">laptop</option>
+                            <option value="mobile">Smart Phone</option>
+                        </select>
                 </form>
-                <div className="absolute -bottom-7 active:scale-90 duration-150 border-2 p-1 rounded " onClick={toggleSerch}>
+                <div className="absolute -bottom-0 active:scale-90 duration-150 border-2 p-1 rounded " onClick={toggleSerch}>
                     <RxCross2 />
                 </div>
             </div >
@@ -125,7 +139,7 @@ const Navbar = () => {
                 </div>
             </div>
             {/* signup / login  */}
-            <div title="signup login" className={`w-[280px] bg-white border p-2 capitalize z-10 rounded top-12 2xl:top-16 flex flex-col items-stretch text-center gap-2 fixed right-0 font-semibold duration-75 ${acount ? 'visible pointer-events-auto scale-100' : 'invisible pointer-events-none scale-90'}`}>
+            <div title="signup login" className={`w-[280px] bg-white border p-2 capitalize z-50 rounded top-12 2xl:top-16 flex flex-col items-stretch text-center gap-2  fixed right-0 font-semibold duration-75 ${acount ? 'visible pointer-events-auto scale-100' : 'invisible pointer-events-none scale-90'}`}>
                 <Link className="bg-gray-100 p-1">Signup</Link>
                 <Link className="bg-gray-100 p-1">login</Link>
             </div>

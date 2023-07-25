@@ -11,10 +11,10 @@ const Welcome = () => {
                 <div className='h-full md:h-2/3 bg-slate-100 w-full sm:w-2/3 md:w-full flex items-center justify-center capitalize text-xl  font-semibold'>
                     your ad
                 </div>
-                <div className='h-full md:h-1/3 bg-slate-100 w-0 sm:w-1/3 md:w-full'>
-                <div className='h-full  bg-slate-100 w-full sm:w-2/3 md:w-full flex items-center justify-center capitalize  font-semibold'>
+                <div className='h-full md:h-1/3 bg-slate-100 w-0 sm:w-1/3 md:w-full hidden sm:flex items-center justify-center'>
+             
                     <button className='bg-gray-300 p-3 rounded'>See More</button>
-                </div>
+             
 
                 </div>
             </div>
