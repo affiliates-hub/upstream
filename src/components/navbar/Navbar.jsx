@@ -6,8 +6,9 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import { GrMenu } from 'react-icons/gr';
 import { RxCross2 } from 'react-icons/rx';
 import { useEffect, useState } from "react";
+import NavActiveRoutes from "../activeroutes/NavActiveRoutes";
 const Navbar = () => {
-    const user = false;
+    const user = true;
     const [acount, setAcount] = useState(false)
     const [miniserch, setMiniserch] = useState(false)
     const [leftNav, setLeftNav] = useState(false)
@@ -41,10 +42,10 @@ const Navbar = () => {
     }
     let links =
         <>
-            <Link to={'/'} onClick={toggleNav} className="bg-gray-100 py-2  rounded">Home</Link>
-            <Link to={'/about'} onClick={toggleNav} className="bg-gray-100 py-2  rounded">Trending</Link>
-            <Link to={'/contact'} onClick={toggleNav} className="bg-gray-100 py-2  rounded">Top List</Link>
-            <Link to={'/contact'} onClick={toggleNav} className="bg-gray-100 py-2  rounded">Acount</Link>
+            <NavActiveRoutes to={'/'} toggleNav={toggleNav} className="bg-gray-100 py-2  rounded">Home</NavActiveRoutes>
+            <NavActiveRoutes to={'/about'} toggleNav={toggleNav} className="bg-gray-100 py-2  rounded">Trending</NavActiveRoutes>
+            <NavActiveRoutes to={'/contact'} toggleNav={toggleNav} className="bg-gray-100 py-2  rounded">Top List</NavActiveRoutes>
+            <NavActiveRoutes to={'/acount/profile'} toggleNav={toggleNav} className="bg-gray-100 py-2  rounded">Acount</NavActiveRoutes>
         </>
     return (
         <div className="overflow-x-hidden">
@@ -72,15 +73,18 @@ const Navbar = () => {
                             miniserch ? <RxCross2 className="text-lg sm:text-2xl" /> : <FaMagnifyingGlass className="text-lg sm:text-2xl" />
                         }
                     </div>
-                    <div title="cart" className="flex flex-col items-center justify-center cursor-pointer active:scale-90 duration-150 -translate-x-1">
+                    <Link title="cart" className="flex flex-col items-center justify-center cursor-pointer active:scale-90 duration-150 -translate-x-1" to={'/acount/carts'}>
+
                         <div className="relative">
                             <p className="absolute -top-2 left-3 bg-indigo-200 h-4 w-5 rounded-full text-center text-[14px]">0</p>
                             <BsFillCartFill className={`text-xl `}></BsFillCartFill>
                         </div>
-                    </div>
+
+
+                    </Link>
                     <div className={` ${user ? 'p-0' : 'p-2'} h-10 flex flex-col items-center justify-center active:scale-90 duration-150`}>
                         {
-                            user ? <div className="h-10 w-10 rounded-full sm:w-10 object-cover border-2 cursor-pointer"><img src="" className="w-10 h-10 bg-gray-300 rounded-full" alt="" /></div> : <FaRegUserCircle className="text-lg sm:text-2xl cursor-pointer" onClick={toggleAcount}></FaRegUserCircle>
+                            user ? <Link to={'/acount/profile'} className="h-10 w-10 rounded-full sm:w-10 object-cover border-2 cursor-pointer"><img src="" className="w-10 h-10 bg-gray-300 rounded-full" alt="" /></Link> : <FaRegUserCircle className="text-lg sm:text-2xl cursor-pointer" onClick={toggleAcount}></FaRegUserCircle>
                         }
 
                     </div>
@@ -101,11 +105,11 @@ const Navbar = () => {
                         <button type="submit" className="h-10 border-2 rounded px-3 active:scale-90 duration-150"><FaMagnifyingGlass /></button>
 
                     </div>
-                    <select name="type" id=""  className="border-2  rounded capitalize w-full p-1">
-                            <option value="mobile">select Catagorty</option>
-                            <option value="mobile">laptop</option>
-                            <option value="mobile">Smart Phone</option>
-                        </select>
+                    <select name="type" id="" className="border-2  rounded capitalize w-full p-1">
+                        <option value="mobile">select Catagorty</option>
+                        <option value="mobile">laptop</option>
+                        <option value="mobile">Smart Phone</option>
+                    </select>
                 </form>
                 <div className="absolute -bottom-0 active:scale-90 duration-150 border-2 p-1 rounded " onClick={toggleSerch}>
                     <RxCross2 />

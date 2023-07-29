@@ -5,6 +5,10 @@ import Errorpge from "./Errorpge";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/About/About";
 import OmniDetaill from "./components/omnidetaill/OmniDetaill";
+import Acount from "./pages/acount/Acount";
+import Profile from "./pages/acount/pages/Profile";
+import Cart from "./pages/acount/pages/Cart";
+import Settings from "./pages/acount/pages/Settings";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +30,23 @@ const router = createBrowserRouter([
         element: <OmniDetaill></OmniDetaill>
       }
     ],
-  },
+  }, {
+    path: "acount",
+    element: <Acount></Acount>,
+    errorElement: <Errorpge />,
+    children: [
+      {
+        path: "profile",
+        element: <Profile></Profile>
+      }, {
+        path: "carts",
+        element: <Cart></Cart>
+      },
+      {
+        path: "settings",
+        element: <Settings></Settings>
+      }
+    ]
+  }
 ]);
 export default router;
