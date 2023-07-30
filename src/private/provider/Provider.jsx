@@ -27,12 +27,17 @@ const Provider = ({ children }) => {
         return signOut(auth)
     }
     let authData = {
-        user, setUser, loading, refetch, setRefetch, emailSignUP, emailLogIn, signInWithGoogle, updateuser, logOut
+        user, setUser, userRole, loading, refetch, setRefetch, emailSignUP, emailLogIn, signInWithGoogle, updateuser, logOut
     }
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, newUser => {
             setUser(newUser);
-            setLoading(false)
+            if (newUser) {
+                fetch('').then(res => res.json()).then(data => {
+                    setUSerRole(data)
+                    setLoading(false);
+                })
+            }
         })
         return () => unSubscribe();
     }, [])
