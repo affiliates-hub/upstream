@@ -9,6 +9,8 @@ import Acount from "./pages/acount/Acount";
 import Profile from "./pages/acount/pages/Profile";
 import Cart from "./pages/acount/pages/Cart";
 import Settings from "./pages/acount/pages/Settings";
+import Login from "./components/login/Login";
+import Register from "./components/register/Register";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,12 @@ const router = createBrowserRouter([
       }, {
         path: 'detaill/:id',
         element: <OmniDetaill></OmniDetaill>
+      }, {
+        path: 'login',
+        element: <Login></Login>
+      }, {
+        path: 'register',
+        element: <Register></Register>
       }
     ],
   }, {

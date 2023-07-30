@@ -18,6 +18,17 @@ const Acount = () => {
         <NavActiveRoutes to={'/acount/settings'} toggleNav={closeNav}>Settings</NavActiveRoutes>
         <NavActiveRoutes to={'/'} toggleNav={closeNav}>Home</NavActiveRoutes>
     </>
+    const adminLink = <>
+        <NavActiveRoutes to={'/acount/profile'} toggleNav={closeNav}>Add device</NavActiveRoutes>
+        <NavActiveRoutes to={'/acount/settings'} toggleNav={closeNav}>update device</NavActiveRoutes>
+        <NavActiveRoutes to={'/acount/carts'} toggleNav={closeNav}>remove device</NavActiveRoutes>
+        <NavActiveRoutes to={'/'} toggleNav={closeNav}>Trendin gadgets</NavActiveRoutes>
+        <NavActiveRoutes to={'/'} toggleNav={closeNav}>Featured items</NavActiveRoutes>
+        <NavActiveRoutes to={'/'} toggleNav={closeNav}>welcome slide</NavActiveRoutes>
+        <NavActiveRoutes to={'/'} toggleNav={closeNav}>Add controll</NavActiveRoutes>
+        <NavActiveRoutes to={'/'} toggleNav={closeNav}>welcome see more</NavActiveRoutes>
+        <NavActiveRoutes to={'/'} toggleNav={closeNav}>web message</NavActiveRoutes>
+    </>
     const nav = <>
         <div className='hidden  sticky h-screen w-96 top-0 bg-gray-100 text-center gap-2 px-3 py-3 lg:flex items-stretch flex-col'>
             {

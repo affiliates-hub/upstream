@@ -5,10 +5,11 @@ import { BsFillCartFill, } from 'react-icons/bs';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { GrMenu } from 'react-icons/gr';
 import { RxCross2 } from 'react-icons/rx';
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import NavActiveRoutes from "../activeroutes/NavActiveRoutes";
+import { contextProvier } from "../../private/provider/Provider";
 const Navbar = () => {
-    const user = true;
+    const { user } = useContext(contextProvier)
     const [acount, setAcount] = useState(false)
     const [miniserch, setMiniserch] = useState(false)
     const [leftNav, setLeftNav] = useState(false)
@@ -144,8 +145,8 @@ const Navbar = () => {
             </div>
             {/* signup / login  */}
             <div title="signup login" className={`w-[280px] bg-white border p-2 capitalize z-50 rounded top-12 2xl:top-16 flex flex-col items-stretch text-center gap-2  fixed right-0 font-semibold duration-75 ${acount ? 'visible pointer-events-auto scale-100' : 'invisible pointer-events-none scale-90'}`}>
-                <Link className="bg-gray-100 p-1">Signup</Link>
-                <Link className="bg-gray-100 p-1">login</Link>
+                <Link to={'/register'} onClick={toggleAcount} className="bg-gray-100 p-1">Register</Link>
+                <Link to={'/login'} onClick={toggleAcount} className="bg-gray-100 p-1">login</Link>
             </div>
 
             {/* Nav backup */}
