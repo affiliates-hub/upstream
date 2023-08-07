@@ -9,7 +9,7 @@ const AddData = () => {
         e.preventDefault();
         const form = e.target;
         const value = form.link.value;
-        fetch(`http://localhost:1111/scrapePhones?link=${value}`).then(res => res.json()).then(data => {
+        fetch(`https://ecomerce-backend-one.vercel.app/scrapePhones?link=${value}`).then(res => res.json()).then(data => {
             setAllLinks(data)
         })
     }
@@ -17,7 +17,7 @@ const AddData = () => {
         e.preventDefault();
         const form = e.target;
         const value = form.link.value;
-        fetch(`http://localhost:1111/scrapePhoneDetaill?link=${value}`).then(res => res.json()).then(data => {
+        fetch(`https://ecomerce-backend-one.vercel.app/scrapePhoneDetaill?link=${value}`).then(res => res.json()).then(data => {
             const newObjectArray = Object.entries(data)
             setDetaillData(newObjectArray)
             setRawData(data)
@@ -29,7 +29,7 @@ const AddData = () => {
         for (let data of datas) {
             buffer[data.name ? data.name : 'extra'] = data.value
         }
-        fetch('http://localhost:1111/addata', {
+        fetch('https://ecomerce-backend-one.vercel.app/addata', {
             headers: { 'Content-Type': 'application/json' },
             method: 'POST',
             body: JSON.stringify(buffer)
