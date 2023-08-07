@@ -5,6 +5,39 @@ import Swal from 'sweetalert2';
 const AddData = () => {
     const [allLinks, setAllLinks] = useState([]);
     const [detaillData, setDetaillData] = useState([])
+    const lazymansLoad = (link) => {
+        fetch(`https://ecomerce-backend-one.vercel.app/scrapePhoneDetaill?link=${link}`).then(res => res.json()).then(data => {
+            const newObjectArray = Object.entries(data)
+            setDetaillData(newObjectArray)
+        })
+    }
+    const lazymansUpload = () => {
+        const datas = document.getElementsByClassName('field');
+        for (let data of datas) {
+            buffer[data.name ? data.name : 'extra'] = data.value
+        }
+        fetch('https://ecomerce-backend-one.vercel.app/addata', {
+            headers: { 'Content-Type': 'application/json' },
+            method: 'POST',
+            body: JSON.stringify(buffer)
+        }).then(res => res.json()).then(data => {
+            if (data.insertedId) {
+                Swal.fire(
+                    'Succes',
+                    'Data added to Database',
+                    'success'
+                )
+            }
+        }).catch(error => {
+            if (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: error.message,
+                })
+            }
+        })
+    }
     const buffer = {}
     const singleData = (e) => {
         e.preventDefault();
@@ -61,12 +94,14 @@ const AddData = () => {
             <div className='flex gap-2 flex-wrap my-4 overflow-hidden h-[20rem] overflow-y-scroll bg-gray-100 rounded'>
 
                 {
-                    allLinks.map(ele => <CopyLink link={ele}></CopyLink>)
+                    allLinks.map(ele => <CopyLink lazymansLoad={lazymansLoad} link={ele}></CopyLink>)
                 }
             </div>
+            <button className='btn btn-info my-1' onClick={lazymansUpload}>Add to db lazy</button>
             <form onSubmit={(e) => detaill(e)} className='flex gap-5'>
                 <input type="text" name='link' placeholder='Get Detaill data' className='w-full input input-bordered input-info' />
                 <button type='submit' className='btn btn-info'>fetch</button>
+
             </form>
             <div className='flex gap-2 flex-wrap my-4 overflow-hidden h-[20rem] overflow-y-scroll bg-gray-100 rounded'>
                 <form className='w-full p-3 flex gap-5 flex-col'>
