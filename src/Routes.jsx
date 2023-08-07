@@ -11,6 +11,10 @@ import Cart from "./pages/acount/pages/Cart";
 import Settings from "./pages/acount/pages/Settings";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
+import Admin from "./private/admin/admin/Admin";
+import AddData from "./private/admin/adddata/AddData";
+import Updatedata from "./private/admin/updatedata/Updatedata";
+import DeleteData from "./private/admin/deletedata/DeleteData";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +57,24 @@ const router = createBrowserRouter([
       {
         path: "settings",
         element: <Settings></Settings>
+      }
+    ]
+  }, {
+    path: 'admin',
+    element: <Admin></Admin>,
+    errorElement: <Errorpge></Errorpge>,
+    children: [
+      {
+        path: 'adddata',
+        element: <AddData></AddData>
+      },
+      {
+        path: 'updatedata',
+        element: <Updatedata></Updatedata>
+      },
+      {
+        path: 'deletedata',
+        element: <DeleteData></DeleteData>
       }
     ]
   }
