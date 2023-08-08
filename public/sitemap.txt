@@ -1,0 +1,7 @@
+https://hyperview.netlify.app/contact
+https://hyperview.netlify.app/about
+https://hyperview.netlify.app/login
+https://hyperview.netlify.app/register
+https://hyperview.netlify.app/acount
+https://hyperview.netlify.app/acount/profile
+https://hyperview.netlify.app/acount/settings
