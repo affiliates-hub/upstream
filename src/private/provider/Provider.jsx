@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import app from '../../assets/Firebase_sdk';
+import app from '../../assets/Firebase_Sdk';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut, updateProfile, onAuthStateChanged } from "firebase/auth";
 export const contextProvier = createContext(null)
 const Provider = ({ children }) => {
