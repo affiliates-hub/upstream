@@ -1,12 +1,34 @@
-import React from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
-import goback from '/arrow-left.svg'
 const OmniDetaill = () => {
+    const loaderData = useLoaderData()
+    //name
+    //price
+    //launch
+    //brand
+    // ram
+    // processor
+    // stroage
+    //buy on daraj
+    //buy on amazon
+    console.log(loaderData);
+    delete loaderData._id;
+    delete loaderData.Showroom;
+    delete loaderData.Video;
+    delete loaderData.Audio;
+    let gridData = Object.entries(loaderData)
     const navigate = useNavigate()
     const goBack = () => {
-       navigate(-1)
+        navigate(-1)
     }
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
+    }, [])
     return (
         <div className='container mx-auto  px-2'>
             <BsArrowLeft className='text-3xl mt-2 rounded cursor-pointer bg-gray-100 p-1' onClick={goBack} />
@@ -43,67 +65,28 @@ const OmniDetaill = () => {
                         {/* head */}
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Job</th>
+                                <th>Title</th>
+                                <th>Description</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {/* row 1 */}
-                            <tr>
+                            {
+                                gridData.map(ele => {
+                                    return (
+                                        <tr>
+                                            <td>{ele[0]}</td>
+                                            <td>{ele[1]}</td>
+                                        </tr>
+                                    )
+                                })
+                            }
 
-                                <td>Cy Ganderton</td>
-                                <td>Quality Control Specialist</td>
 
-                            </tr>
-                            {/* row 2 */}
-                            <tr>
-
-                                <td>Hart Hagerty</td>
-                                <td>Desktop Support Technician</td>
-
-                            </tr>
-                            {/* row 3 */}
-                            <tr>
-
-                                <td>Brice Swyre</td>
-                                <td>Tax Accountant</td>
-
-                            </tr>
-                            <tr>
-
-                                <td>Brice Swyre</td>
-                                <td>Tax Accountant</td>
-
-                            </tr>
-                            <tr>
-
-                                <td>Brice Swyre</td>
-                                <td>Tax Accountant</td>
-
-                            </tr>
-                            <tr>
-
-                                <td>Brice Swyre</td>
-                                <td>Tax Accountant</td>
-
-                            </tr>
-                            <tr>
-
-                                <td>Brice Swyre</td>
-                                <td>Tax Accountant</td>
-
-                            </tr>
-                            <tr>
-
-                                <td>Brice Swyre</td>
-                                <td>Tax Accountant</td>
-
-                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div className='min-h-[30rem] rounded w-full bg-gray-300'>
+            <div className='min-h-[15rem] rounded w-full bg-gray-300'>
                 comments
             </div>
         </div>

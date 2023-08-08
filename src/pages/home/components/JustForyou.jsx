@@ -1,25 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import MainCard from '../../../components/maincard/MainCard';
+import { dataProvier } from '../../../private/provider/DataProvider';
 
 const JustForyou = () => {
-    let datas = []
-    for (let i = 0; i < 30; i++) {
-        let data = {
-            id: i,
-            name: 'title random',
-            price: 50,
-            ratings: 5,
-            quality: 'premium',
-            tranding: true,
-            img: "img"
-
-        }
-        datas.push(data)
-    }
+    const { forYou, loadmore } = useContext(dataProvier)
     return (
         <div className='flex flex-wrap gap-5 items-center justify-center'>
             {
-                datas.map(ele => <MainCard key={ele.id} data={ele}></MainCard>)
+                forYou.map(ele => <MainCard key={ele._id} data={ele}></MainCard>)
             }
         </div>
     );

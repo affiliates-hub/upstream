@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import Welcome from "./components/Welcome";
 import Trending from "./components/Trending";
-import SmallCard from "../../components/small-card/SmallCard";
 import FeaturedItems from "./components/FeaturedItems";
 import JustForyou from "./components/JustForyou";
+import { useContext } from "react";
+import { dataProvier } from "../../private/provider/DataProvider";
 
 
 const Home = () => {
+    const { loadmore, loading, loadingBtn } = useContext(dataProvier)
     let datas = []
     for (let i = 0; i < 6; i++) {
         let data = {
@@ -37,9 +39,19 @@ const Home = () => {
             </div>
             <FeaturedItems data={datas} ></FeaturedItems>
             <h1 className="text-2xl font-semibold px-1  py-8 underline decoration-gray-400 decoration-4 underline-offset-[10px]">Just for you</h1>
-            <JustForyou></JustForyou>
+            {
+                loading ? <div className="w-full flex-col h-[15rem] flex items-center justify-center bg-gray-200 gap-2">
+                    <span className=" loading loading-spinner loading-lg"></span>
+                </div> : <JustForyou></JustForyou>
+            }
+
             <div className="w-full flex justify-center my-4">
-                <button className="bg-gray-300 p-3  rounded font-semibold active:scale-90 duration-100 hover:bg-gray-200">Load more</button>
+                {
+                    loadingBtn ? <div className="bg-gray-300 px-9 py-2 flex items-center justify-center rounded"> <span className=" loading loading-spinner loading-md"></span></div> : <button onClick={loadmore} className="bg-gray-300 p-3  rounded font-semibold active:scale-90 duration-100 hover:bg-gray-200">
+                        Load more
+                    </button>
+                }
+
             </div>
 
         </div >
