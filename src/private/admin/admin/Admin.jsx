@@ -15,6 +15,7 @@ const Admin = () => {
         <NavActiveRoutes to={'/admin/adddata'} toggleNav={closeNav}>Add device</NavActiveRoutes>
         <NavActiveRoutes to={'/admin/updatedata'} toggleNav={closeNav}>update device</NavActiveRoutes>
         <NavActiveRoutes to={'/admin/deletedata'} toggleNav={closeNav}>remove device</NavActiveRoutes>
+        <NavActiveRoutes to={'/admin/showdata'} toggleNav={closeNav}>show data</NavActiveRoutes>
         <NavActiveRoutes to={'/'} toggleNav={closeNav}>Trendin gadgets</NavActiveRoutes>
         <NavActiveRoutes to={'/'} toggleNav={closeNav}>Featured items</NavActiveRoutes>
         <NavActiveRoutes to={'/'} toggleNav={closeNav}>welcome slide</NavActiveRoutes>

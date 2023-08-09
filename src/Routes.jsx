@@ -15,6 +15,7 @@ import Admin from "./private/admin/admin/Admin";
 import AddData from "./private/admin/adddata/AddData";
 import Updatedata from "./private/admin/updatedata/Updatedata";
 import DeleteData from "./private/admin/deletedata/DeleteData";
+import ShowData from "./private/admin/showData/ShowData";
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,9 @@ const router = createBrowserRouter([
       {
         path: 'deletedata',
         element: <DeleteData></DeleteData>
+      }, {
+        path: 'showdata',
+        element: <ShowData></ShowData>
       }
     ]
   }

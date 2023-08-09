@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsFillCartFill, BsFillArrowRightCircleFill } from 'react-icons/bs';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 const SmallCard = () => {
     return (
@@ -14,7 +12,7 @@ const SmallCard = () => {
                     <div className='flex flex-col justify-between capitalize text-sm sm:font-semibold sm:px-1'>
                         <div title='company name' className='flex justify-between items-center px-1 capitalize'>
                             <p className='text-gray-500 text-sm font-semibold'>smart phone</p>
-                            <AiOutlineHeart className='cursor-pointer  text-red-500 active:scale-110 duration-200'></AiOutlineHeart>
+                            
                         </div>
                         <div>
                             <h3 title='product name' className='text-gray-700'>samsung galaxy a10s</h3>

@@ -1,0 +1,43 @@
+data fields
+1.brand//
+2.model//
+3. price//
+4.catagory//
+5.network// +speed//
+6.launchAnnounce//
+7.launch//
+8.weight//
+9.bodyDimenson//
+10.build//
+11.sim//
+12.sdCard
+13.dispaly
+14.displaySize
+15.displayRez
+16.displayDesity
+ .displayProtection
+
+17.os
+18.osv
+19.chip
+20.chipDetaill
+21.gpu
+22.ram
+23.camera
+24.cameraExtra
+25.seconCamera
+26.camFeature
+27.microphone
+28.wifi
+29.blutooth
+30.gps
+31.sensors {}
+32.fingerPrint
+33.batary
+34.bateryCapacity
+35.color
+36.gyro
+37.usb
+38.charging
+39.storage
+

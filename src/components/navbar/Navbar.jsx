@@ -9,11 +9,13 @@ import { useContext, useEffect, useState } from "react";
 import NavActiveRoutes from "../activeroutes/NavActiveRoutes";
 import { contextProvier } from "../../private/provider/Provider";
 const Navbar = () => {
+    const [navTop, setNavtop] = useState(true);
     const { user } = useContext(contextProvier)
     const [acount, setAcount] = useState(false)
     const [miniserch, setMiniserch] = useState(false)
     const [leftNav, setLeftNav] = useState(false)
     let loacal = localStorage.getItem('first-time')
+
     useEffect(() => {
         if (!loacal) {
             setTimeout(() => {
@@ -49,9 +51,9 @@ const Navbar = () => {
             <NavActiveRoutes to={'/acount/profile'} toggleNav={toggleNav} className="bg-gray-100 py-2  rounded">Acount</NavActiveRoutes>
         </>
     return (
-        <div className="overflow-x-hidden">
+        <div className={`overflow-x-hidden `}>
             {/* options and other nav options */}
-            <div title="navbar options" className="flex justify-between items-center w-full h-12 border shadow fixed p-1 md:p-2 lg:p-4 xl:p-6 2xl:p-8 bg-white z-[111]">
+            <div title="navbar options" id="navbar" className={`fixed flex justify-between items-center w-full h-12 border shadow  p-1 md:p-2 lg:p-4 xl:p-6 2xl:p-8 bg-white z-[111] duration-100 `}>
 
                 <Link to={'/'}>
                     <div title="logo" className="h-10 w-[90px] lg:w-[100px] 2xl:w-[120px] bg-gray-300 rounded"></div>

@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsFillCartFill, BsFillArrowRightCircleFill } from 'react-icons/bs';
-import { AiOutlineHeart } from 'react-icons/ai';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 const MainCard = ({ data }) => {
