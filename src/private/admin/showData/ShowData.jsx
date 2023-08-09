@@ -8,7 +8,7 @@ const ShowData = () => {
         e.preventDefault();
         const form = e.target;
         const value = form.link.value;
-        fetch(`http://localhost:1111/newbrand/${value}`).then(res => res.json()).then(data => {
+        fetch(`https://ecomerce-backend-one.vercel.app/newbrand/${value}`).then(res => res.json()).then(data => {
             setAllLinks(data);
         })
     }

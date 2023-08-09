@@ -5,7 +5,7 @@ import Swal from "sweetalert2"
 const ShowCard = ({ data }) => {
     const [visible, setVisible] = useState(true)
     const deleteById = () => {
-        fetch(`http://localhost:1111/deletenewphone/${data._id}`, {
+        fetch(`https://ecomerce-backend-one.vercel.app/deletenewphone/${data._id}`, {
             headers: { 'Content-Type': 'application/json' },
             method: 'DELETE'
         }).then(res => res.json()).then(data => {

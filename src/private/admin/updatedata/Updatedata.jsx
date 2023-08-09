@@ -69,7 +69,7 @@ const Updatedata = () => {
         e.preventDefault();
         const form = e.target;
         const value = form.link.value;
-        fetch(`http://localhost:1111/brand/${value}`).then(res => res.json()).then(data => {
+        fetch(`https://ecomerce-backend-one.vercel.app/brand/${value}`).then(res => res.json()).then(data => {
             setAllLinks(data);
         })
     }
@@ -83,7 +83,7 @@ const Updatedata = () => {
             buffer[name] = value
         }
         console.table(buffer);
-        fetch('http://localhost:1111/newaddata', {
+        fetch('https://ecomerce-backend-one.vercel.app/newaddata', {
             headers: { 'Content-Type': 'application/json' },
             method: 'POST',
             body: JSON.stringify(buffer)
