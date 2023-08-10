@@ -4,11 +4,6 @@ import { BsArrowLeft } from "react-icons/bs";
 const OmniDetaill = () => {
     const loaderData = useLoaderData()
     console.table(loaderData);
-    delete loaderData._id;
-    delete loaderData.Showroom;
-    delete loaderData.Video;
-    delete loaderData.Audio;
-    delete loaderData['Network 2G']
     let gridData = Object.entries(loaderData)
     const navigate = useNavigate()
     const goBack = () => {
@@ -26,20 +21,20 @@ const OmniDetaill = () => {
             <BsArrowLeft className='text-3xl mt-2 rounded cursor-pointer bg-gray-100 p-1' onClick={goBack} />
             <div className='grid grid-cols-5  gap-5 mt-2'>
                 <div className='h-full col-span-5 lg:col-span-2 bg-gray-300 rounded '>
-                    <img src="" className='w-full bg-slate-300 rounded aspect-[4/3] md:aspect-[4/2] lg:aspect-[4/3] object-cover' alt="" />
+                    <img src={loaderData.img} className='w-full bg-slate-300 rounded aspect-[4/3] md:aspect-[4/2] lg:aspect-[4/3] object-cover' alt="" />
                 </div>
                 <div className='h-full col-span-5 lg:col-span-3 p-5 bg-gray-100 rounded flex  flex-col justify-between gap-2'>
                     <div>
-                        <h1 className='text-xl font-semibold '>{loaderData.Name}</h1>
-                        <p>Price : {loaderData['Price']}</p>
+                        <h1 className='text-xl font-semibold '>{loaderData.model}</h1>
+                        <p>Price : {loaderData.price} Taka</p>
                     </div>
                     <div className=' text-[.8rem] text-gray-600 font-semibold capitalize flex flex-col gap-1'>
                         <h3 className='text-lg font-semibold'>Key feature</h3>
-                        <p>brand: <span className='text-sm'>{loaderData['Brand']}</span></p>
-                        <p>Processor: <span className='text-sm'>{loaderData['Chipset']}</span></p>
-                        <p>Ram: <span className='text-sm'>{loaderData['Ram']}</span></p>
-                        <p>storage: <span className='text-sm'>{loaderData['Memory Internal']}</span></p>
-                        <p>launched: <span className='text-sm'>{loaderData['Launch Date']}</span></p>
+                        <p>brand: <span className='text-sm'>{loaderData.brand}</span></p>
+                        <p>Processor: <span className='text-sm'>{loaderData.chip}</span></p>
+                        <p>Ram: <span className='text-sm'>{loaderData.ram}</span></p>
+                        <p>storage: <span className='text-sm'>{loaderData.storage}</span></p>
+                        <p>launched: <span className='text-sm'>{loaderData.launch}</span></p>
                     </div>
                     <div className='flex flex-col gap-3'>
                         <p className='capitalize text-gray-700 font-semibold'>Buy at best price from here </p>
@@ -63,8 +58,8 @@ const OmniDetaill = () => {
                     <table className=" w-full">
                         {/* head */}
                         <thead>
-                            <tr>
-                                <th>Title</th>
+                            <tr className='bg-gray-200 '>
+                                <th className='py-3'>Title</th>
                                 <th>Description</th>
                             </tr>
                         </thead>
@@ -73,7 +68,7 @@ const OmniDetaill = () => {
                                 gridData.map(ele => {
                                     return (
                                         <tr className='text-sm rounded md:text-base even:bg-gray-100 w-full'>
-                                            <td className='p-2 py-5 md:py-3'>{ele[0]}</td>
+                                            <td className='p-2 py-5 md:py-3 capitalize'>{ele[0]}</td>
                                             <td>{ele[1]}</td>
                                         </tr>
                                     )

@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       }, {
         path: 'detaill/:id',
         element: <OmniDetaill></OmniDetaill>,
-        loader: (query) => fetch(`https://ecomerce-backend-one.vercel.app/phone/${query.params.id}`)
+        loader: (query) => fetch(`https://ecomerce-backend-one.vercel.app/newphone/${query.params.id}`)
       }, {
         path: 'login',
         element: <Login></Login>

@@ -38,8 +38,8 @@ const Home = () => {
                 <p className="max-w-lg mx-auto text-sm text-gray-500">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero maiores quaerat quisquam officia deleniti animi rerum repellat tempore </p>
             </div>
             <FeaturedItems data={datas} ></FeaturedItems>
-            <div className="grid grid-cols-5 gap-3 mt-12 bg-gray-300" >
-                <div className="xl:col-span-1 bg-gray-300 rounded-md h-full hidden xl:block">
+            <div className="grid grid-cols-5 gap-3 mt-12 " >
+                <div className="xl:col-span-1 bg-gray-100 rounded-md h-full hidden xl:block">
 
                 </div>
                 {

@@ -12,14 +12,14 @@ const DataProvider = ({ children }) => {
     const loadmore = () => {
         setLoadingBtn(true)
         loadCount = loadCount + 24;
-        fetch(`https://ecomerce-backend-one.vercel.app/phones/${loadCount}`).then(res => res.json()).then(data => {
+        fetch(`https://ecomerce-backend-one.vercel.app/newphones/${loadCount}`).then(res => res.json()).then(data => {
             setJustForyou([...forYou, ...data])
             setLoadingBtn(false)
         })
     }
 
     useEffect(() => {
-        fetch('https://ecomerce-backend-one.vercel.app/phones/0').then(res => res.json()).then(data => {
+        fetch('https://ecomerce-backend-one.vercel.app/newphones/0').then(res => res.json()).then(data => {
             setJustForyou(data);
             setLoading(false);
         })
