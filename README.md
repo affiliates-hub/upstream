@@ -1,10 +1,13 @@
 # Welcome to upstream
+Live website link: https://hyperview.netlify.app/
+
+or
 
 Live website link : https://upstream-7ba7d.web.app/
 
-## An Blogging/Affilate marketaing site
+## A blogging or affiliate marketing site
 
-We at upstream.io, our main goal is to give 
-realtime data to users around the world.
-Our main products are smartphone and laptop
+* At Hyperview, our primary goal is to give 
+real-time data to users worldwide.
+* Our main products are smartphones and laptops.
 
