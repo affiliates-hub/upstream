@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Welcome from "./components/Welcome";
 import Trending from "./components/Trending";
-import FeaturedItems from "./components/FeaturedItems";
 import JustForyou from "./components/JustForyou";
 import { useContext } from "react";
 import { dataProvier } from "../../private/provider/DataProvider";
@@ -31,13 +30,11 @@ const Home = () => {
     return (
         <div className="container mx-auto mt-5 px-2 relative ">
             <Welcome></Welcome>
-            <h1 className="text-2xl font-semibold px-1 py-3  pt-5 underline decoration-gray-400 decoration-4 underline-offset-[10px]">Trending Gadgets 🔥</h1>
-            <Trending data={datas}></Trending>
             <div className="text-center py-7 md:py-16">
-                <h1 className="text-3xl ">Featured Items</h1>
+                <h1 className="text-3xl ">Trending Items</h1>
                 <p className="max-w-lg mx-auto text-sm text-gray-500">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero maiores quaerat quisquam officia deleniti animi rerum repellat tempore </p>
             </div>
-            <FeaturedItems data={datas} ></FeaturedItems>
+            <Trending data={datas}></Trending>
             <div className="grid grid-cols-5 gap-3 mt-12 " >
                 <div className="xl:col-span-1 bg-gray-100 rounded-md h-full hidden xl:block">
 

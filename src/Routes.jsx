@@ -16,6 +16,8 @@ import AddData from "./private/admin/adddata/AddData";
 import Updatedata from "./private/admin/updatedata/Updatedata";
 import DeleteData from "./private/admin/deletedata/DeleteData";
 import ShowData from "./private/admin/showData/ShowData";
+import Featured from "./pages/featured/Featured";
+import Loader from "./components/loader/Loader";
 
 const router = createBrowserRouter([
   {
@@ -26,62 +28,82 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-      }, {
-        path: 'contact',
-        element: <Contact></Contact>
-      }, {
-        path: 'about',
-        element: <About></About>
-      }, {
-        path: 'detaill/:id',
+      },
+      {
+        path: "contact",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "about",
+        element: <About></About>,
+      },
+      {
+        path: "detaill/:id",
         element: <OmniDetaill></OmniDetaill>,
-        loader: (query) => fetch(`https://ecomerce-backend-one.vercel.app/newphone/${query.params.id}`)
-      }, {
-        path: 'login',
-        element: <Login></Login>
-      }, {
-        path: 'register',
-        element: <Register></Register>
-      }
+        loader: (query) =>
+          fetch(
+            `https://ecomerce-backend-one.vercel.app/newphone/${query.params.id}`
+          ),
+      },
+      {
+        path: "featured",
+        element: <Featured></Featured>,
+      },
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "register",
+        element: <Register></Register>,
+      },
+      {
+        path: "loader",
+        element: <Loader></Loader>,
+      },
     ],
-  }, {
+  },
+  {
     path: "acount",
     element: <Acount></Acount>,
     errorElement: <Errorpge />,
     children: [
       {
         path: "profile",
-        element: <Profile></Profile>
-      }, {
+        element: <Profile></Profile>,
+      },
+      {
         path: "carts",
-        element: <Cart></Cart>
+        element: <Cart></Cart>,
       },
       {
         path: "settings",
-        element: <Settings></Settings>
-      }
-    ]
-  }, {
-    path: 'admin',
+        element: <Settings></Settings>,
+      },
+    ],
+  },
+  {
+    path: "admin",
     element: <Admin></Admin>,
     errorElement: <Errorpge></Errorpge>,
     children: [
       {
-        path: 'adddata',
-        element: <AddData></AddData>
+        path: "adddata",
+        element: <AddData></AddData>,
       },
       {
-        path: 'updatedata',
-        element: <Updatedata></Updatedata>
+        path: "updatedata",
+        element: <Updatedata></Updatedata>,
       },
       {
-        path: 'deletedata',
-        element: <DeleteData></DeleteData>
-      }, {
-        path: 'showdata',
-        element: <ShowData></ShowData>
-      }
-    ]
-  }
+        path: "deletedata",
+        element: <DeleteData></DeleteData>,
+      },
+      {
+        path: "showdata",
+        element: <ShowData></ShowData>,
+      },
+    ],
+  },
 ]);
 export default router;

@@ -46,7 +46,7 @@ const Navbar = () => {
     let links =
         <>
             <NavActiveRoutes to={'/'} toggleNav={toggleNav} className="bg-gray-100 py-2  rounded">Home</NavActiveRoutes>
-            <NavActiveRoutes to={'/about'} toggleNav={toggleNav} className="bg-gray-100 py-2  rounded">Trending</NavActiveRoutes>
+            <NavActiveRoutes to={'/featured'} toggleNav={toggleNav} className="bg-gray-100 py-2  rounded">Featured</NavActiveRoutes>
             <NavActiveRoutes to={'/contact'} toggleNav={toggleNav} className="bg-gray-100 py-2  rounded">Top List</NavActiveRoutes>
             <NavActiveRoutes to={'/acount/profile'} toggleNav={toggleNav} className="bg-gray-100 py-2  rounded">Acount</NavActiveRoutes>
         </>

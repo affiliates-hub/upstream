@@ -1,0 +1,6 @@
+.conic{
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-image: conic-gradient(from 0deg, red, yellow, green, blue, purple, red);
+    border-image-slice: 1;
+}
